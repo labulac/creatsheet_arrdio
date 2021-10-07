@@ -27,9 +27,6 @@ static7={cls="static";text="日--";left=312;top=96;right=344;bottom=120;align="c
 )
 /*}}*/
 
-
-
-
 //无界面拖动
 mainForm.onMouseDown = function(wParam,lParam){
 	mainForm.hitCaption()
