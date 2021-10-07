@@ -1,0 +1,109 @@
+import win.ui;
+import com.excel;
+import fsys;
+/*DSG{{*/
+mainForm = win.form(text="creatsheet";right=607;bottom=175;border="dialog frame";max=false;min=false;mode="popup";sysmenu=false;title=false;topmost=1)
+mainForm.add(
+button={cls="button";text="生成账单";left=472;top=64;right=536;bottom=88;dr=1;dt=1;font=LOGFONT(h=-14);z=5};
+button2={cls="button";text="写入工期";left=24;top=128;right=88;bottom=152;disabled=1;dr=1;dt=1;font=LOGFONT(h=-14);z=20};
+combobox={cls="combobox";left=80;top=96;right=136;bottom=120;edge=1;font=LOGFONT(h=-14);items={"2021";"2022";"2023";"2024";"2025";"2026";"2027";"2028";"2029";"2030"};mode="dropdown";vscroll=1;z=7};
+combobox12={cls="combobox";left=344;top=96;right=400;bottom=120;edge=1;font=LOGFONT(h=-14);items={"2021";"2022";"2023";"2024";"2025";"2026";"2027";"2028";"2029";"2030"};mode="dropdown";vscroll=1;z=14};
+combobox13={cls="combobox";left=432;top=96;right=488;bottom=120;edge=1;font=LOGFONT(h=-14);items={"1";"2";"3";"4";"5";"6";"7";"8";"9";"10";"11";"12"};mode="dropdown";vscroll=1;z=16};
+combobox15={cls="combobox";left=520;top=96;right=576;bottom=120;edge=1;font=LOGFONT(h=-14);items={"1";"2";"3";"4";"5";"6";"7";"8";"9";"10";"11";"12";"13";"14";"15";"16";"17";"18";"19";"20";"21";"22";"23";"24";"25";"26";"27";"28";"29";"30";"31"};mode="dropdown";vscroll=1;z=18};
+combobox7={cls="combobox";left=168;top=96;right=224;bottom=120;edge=1;font=LOGFONT(h=-14);items={"1";"2";"3";"4";"5";"6";"7";"8";"9";"10";"11";"12"};mode="dropdown";vscroll=1;z=10};
+combobox8={cls="combobox";left=256;top=96;right=312;bottom=120;edge=1;font=LOGFONT(h=-14);items={"1";"2";"3";"4";"5";"6";"7";"8";"9";"10";"11";"12";"13";"14";"15";"16";"17";"18";"19";"20";"21";"22";"23";"24";"25";"26";"27";"28";"29";"30";"31"};mode="dropdown";vscroll=1;z=12};
+edit={cls="edit";left=184;top=64;right=414;bottom=88;align="center";dl=1;dr=1;dt=1;edge=1;z=3};
+plus={cls="plus";text="退出";left=536;top=0;right=608;bottom=24;bgcolor=-5197169;font=LOGFONT(h=-14);notify=1;z=6};
+static={cls="static";text="新建账单小助手v3.0";left=184;top=16;right=408;bottom=48;align="center";dl=1;dr=1;dt=1;font=LOGFONT(h=-19);notify=1;transparent=1;z=1};
+static11={cls="static";text="年";left=400;top=96;right=432;bottom=120;align="center";center=1;dr=1;dt=1;font=LOGFONT(h=-14);transparent=1;z=15};
+static12={cls="static";text="月";left=488;top=96;right=520;bottom=120;align="center";center=1;dr=1;dt=1;font=LOGFONT(h=-14);transparent=1;z=17};
+static14={cls="static";text="日";left=576;top=96;right=608;bottom=120;align="center";center=1;dr=1;dt=1;font=LOGFONT(h=-14);transparent=1;z=19};
+static2={cls="static";text="工期段：";left=16;top=96;right=80;bottom=120;align="center";center=1;dr=1;dt=1;font=LOGFONT(h=-14);transparent=1;z=8};
+static3={cls="static";text="新的账单名：";left=72;top=64;right=176;bottom=88;align="center";center=1;dl=1;dt=1;font=LOGFONT(h=-14);transparent=1;z=2};
+static4={cls="static";text=".xlsx";left=424;top=64;right=467;bottom=88;align="center";center=1;dr=1;dt=1;font=LOGFONT(h=-14);notify=1;transparent=1;z=4};
+static5={cls="static";text="年";left=136;top=96;right=168;bottom=120;align="center";center=1;dr=1;dt=1;font=LOGFONT(h=-14);transparent=1;z=9};
+static6={cls="static";text="月";left=224;top=96;right=256;bottom=120;align="center";center=1;dr=1;dt=1;font=LOGFONT(h=-14);transparent=1;z=11};
+static7={cls="static";text="日--";left=312;top=96;right=344;bottom=120;align="center";center=1;dr=1;dt=1;font=LOGFONT(h=-14);transparent=1;z=13}
+)
+/*}}*/
+
+
+
+
+//无界面拖动
+mainForm.onMouseDown = function(wParam,lParam){
+	mainForm.hitCaption()
+}
+
+
+
+mainForm.plus.skin({
+	background={
+		default=0x668FB2B0;
+		disabled=0xFFCCCCCC;
+		hover=0xFF928BB3
+	};
+	color={
+		default=0xFF000000;
+		disabled=0xFF6D6D6D
+	}
+})
+
+mainForm.button.oncommand = function(id,event){
+	fsys.createDir("d:\sheet")
+	
+	if(mainForm.edit.text!=''){
+		if(io.exist("d:\sheet\"+mainForm.edit.text+".xlsx",str)){
+			mainForm.edit.showWarningTip("警告","账单名称已存在，换一个吧！")
+		}
+		else {
+			var muban = string.load("\res\muban.xlsx");
+			file_dir=("d:\sheet\"+mainForm.edit.text+".xlsx")
+			string.save(file_dir,muban);
+			mainForm.button.text='已生成';
+			mainForm.button.disabled=true;
+			mainForm.edit.disabled=true
+			mainForm.button2.disabled=false
+		}
+	}
+	else {
+		mainForm.edit.showErrorTip("错误","账单名称不能为空！")
+	}
+}
+
+mainForm.plus.oncommand = function(id,event){
+	mainForm.close()
+}
+
+mainForm.button2.oncommand = function(id,event){
+	var qsrq=mainForm.combobox.text+"年"+mainForm.combobox7.text+"月"+mainForm.combobox8.text+"日"
+	var jzrq=mainForm.combobox12.text+"年"+mainForm.combobox13.text+"月"+mainForm.combobox15.text+"日"
+	
+	excel=com.excel()
+	excel.Visible = false; //使Excel窗口可见
+    excel.alerts = false; //关闭所有操作提示
+	var book = excel.Open(file_dir) //打开xls文件
+	
+	var sheet = excel.ActiveWorkbook.Sheets(1);
+	
+	sheet.unprotect('1357954163')
+	
+	excel.range("A2").value2=qsrq; //A1单元格写入值
+	excel.range("C2").value2=jzrq;
+	
+	
+	sheet.EnableSelection = xlNoRestrictions
+	sheet.protect("1357954163", DrawingObjects=True, Contents=True, Scenarios=False, UserInterfaceOnly=False, AllowFormattingCells=False, AllowFormattingColumns=False, AllowFormattingRows=False, AllowInsertingColumns=False, AllowInsertingRows=False, AllowInsertingHyperlinks=False, AllowDeletingColumns=False, AllowDeletingRows=False, AllowSorting=False, AllowFiltering=False, AllowUsingPivotTables=False)
+	
+	
+	excel.ActiveWorkBook.SaveAs(file_dir); //保存文件到指定目录
+	excel.workbooks.close(); //关闭工作簿
+	excel.Quit(); //退出
+	
+	mainForm.button2.disabled=true
+	mainForm.button2.text='已写入'
+}
+
+
+mainForm.show();
+return win.loopMessage();
