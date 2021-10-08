@@ -1,8 +1,8 @@
 import win.ui;
 import com.excel;
 import fsys;
-import ide
 import fsys.update.simpleMain;
+
 /*DSG{{*/
 mainForm = win.form(text="creatsheet";right=607;bottom=191;border="dialog frame";max=false;min=false;mode="popup";sysmenu=false;title=false;topmost=1)
 mainForm.add(
@@ -31,9 +31,9 @@ static7={cls="static";text="日--";left=312;top=96;right=344;bottom=120;align="c
 /*}}*/
 
 
-a = ide.getProjectProperty("ProductVersion")
+a = fsys.version.getInfo(io._exepath).productVersion
 
-mainForm.static.text='新建账单小助手v'+a
+mainForm.static.text='新建账单小助手v'+tostring(a)
 
 mainForm.lnkVersion.disabledText = {'\uF254';'\uF251';'\uF252';'\uF253';'\uF250'}
 if( fsys.update.simpleMain(

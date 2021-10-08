@@ -4,5 +4,5 @@
     "main":"\\creatsheet.exe",
     "updater":"\\creatsheet.exe",
     "url":"https://ghproxy.com/https://raw.githubusercontent.com/labulac/creatsheet_arrdio/main/update-files/",
-    "version":"0.0.0.28"
+    "version":"0.0.0.31"
 }
