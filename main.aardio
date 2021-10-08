@@ -1,4 +1,5 @@
 import win.ui;
+import win.ui.menu;
 import com.excel;
 import fsys;
 /*DSG{{*/
@@ -160,6 +161,7 @@ mainForm.lnkVersion.oncommand = function(id,event){
 		win.quitMessage();
 	}
 }
+
 
 mainForm.show();
 return win.loopMessage();

@@ -1,0 +1,8 @@
+{
+    "description":"1",
+    "format":".lzma",
+    "main":"\\creatsheet.exe",
+    "updater":"\\creatsheet.exe",
+    "url":"https://ghproxy.com/https://raw.githubusercontent.com/labulac/creatsheet_arrdio/main/dist/creatsheet.exe",
+    "version":"0.0.0.16"
+}
