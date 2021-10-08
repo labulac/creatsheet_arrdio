@@ -1,6 +1,6 @@
 {
-updateUrl="http://update.aardio.com/api/v1";
-singleFile=0;
-description="";
+updateUrl="https://ghproxy.com/https://raw.githubusercontent.com/labulac/creatsheet_arrdio/main/dist/creatsheet.exe";
+singleFile=1;
+description="1";
 outputDir="/.update-files/"
 }
