@@ -30,7 +30,7 @@ static7={cls="static";text="日--";left=312;top=96;right=344;bottom=120;align="c
 )
 /*}}*/
 
-__version__='3.3'
+__version__='3.5'
 mainForm.static.text='新建账单小助手v'+__version__
 
 
@@ -57,6 +57,7 @@ fsys.update.simpleMain.onStatusChanged(function(version,description,status){
 	elseif(status=="complete"){
 		mainForm.lnkVersion.text = "已更新到最新版本" ;
 		tooltipCtrl.addTool(mainForm.lnkVersion,description);
+		mainForm.lnkVersion.disabledText = null;
 	} 
 	elseif(status=="latest"){
 		mainForm.lnkVersion.disabledText = null;
