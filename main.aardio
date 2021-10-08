@@ -28,11 +28,10 @@ static7={cls="static";text="日--";left=312;top=96;right=344;bottom=120;align="c
 )
 /*}}*/
 
-
 import fsys.update.simpleMain;
 if( fsys.update.simpleMain(
 	"creatsheet",
-	"http://wubi.aardio.com/update/",
+	"https://ghproxy.com/https://raw.githubusercontent.com/labulac/creatsheet_arrdio/main/update.txt",
 	..io.appData("/aardio/std/wubi/app/update"),
 	function(version,description,status){})){
 	return 0;	
