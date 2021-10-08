@@ -1,8 +1,8 @@
 {
-    "description":"新增了一些功能。新增了图标文件。完善了升级功能。",
+    "description":"bug修复，新增了一些功能。新增了图标文件。完善了升级功能。",
     "format":".lzma",
     "main":"\\creatsheet.exe",
     "updater":"\\creatsheet.exe",
     "url":"https://ghproxy.com/https://raw.githubusercontent.com/labulac/creatsheet_arrdio/main/update-files/",
-    "version":"0.0.0.31"
+    "version":"0.0.0.33"
 }
