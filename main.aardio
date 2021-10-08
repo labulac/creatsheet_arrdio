@@ -26,7 +26,8 @@ static3={cls="static";text="新的账单名：";left=72;top=64;right=176;bottom=
 static4={cls="static";text=".xlsx";left=424;top=64;right=467;bottom=88;align="center";center=1;dr=1;dt=1;font=LOGFONT(h=-14);notify=1;transparent=1;z=4};
 static5={cls="static";text="年";left=136;top=96;right=168;bottom=120;align="center";center=1;dr=1;dt=1;font=LOGFONT(h=-14);transparent=1;z=10};
 static6={cls="static";text="月";left=224;top=96;right=256;bottom=120;align="center";center=1;dr=1;dt=1;font=LOGFONT(h=-14);transparent=1;z=12};
-static7={cls="static";text="日--";left=312;top=96;right=344;bottom=120;align="center";center=1;dr=1;dt=1;font=LOGFONT(h=-14);transparent=1;z=14}
+static7={cls="static";text="日--";left=312;top=96;right=344;bottom=120;align="center";center=1;dr=1;dt=1;font=LOGFONT(h=-14);transparent=1;z=14};
+static8={cls="static";text="开心每一天！";left=96;top=128;right=608;bottom=160;align="center";center=1;font=LOGFONT(h=-16;weight=700);transparent=1;z=23}
 )
 /*}}*/
 
@@ -72,6 +73,35 @@ fsys.update.simpleMain.onStatusChanged(function(version,description,status){
 
 
 
+import thread.command;
+//创建一言线程
+var listener = thread.command();
+listener.print = function( ... ){
+    mainForm.static8.text=( ... ) //将线程传过来的参数追加输出到文本框
+}  
+thread.invoke(
+
+    function(){
+   
+        //必须在线程函数内部导入需要的库
+        import thread.command;
+        import inet.http
+		var http = inet.http()
+ 
+        while(true){
+            yiyan=http.get("https://v1.jinrishici.com/rensheng.txt")
+            thread.command.print(yiyan);
+            sleep(3000)
+        
+        }
+        
+        
+    }
+)
+	
+
+
+
 //无界面可拖动
 mainForm.onMouseDown = function(wParam,lParam){
 	mainForm.hitCaption()
@@ -113,7 +143,8 @@ mainForm.button.oncommand = function(id,event){
 }
 
 mainForm.plus.oncommand = function(id,event){
-	mainForm.close()
+	//mainForm.close()
+	win.quitMessage()
 }
 
 mainForm.button2.oncommand = function(id,event){
