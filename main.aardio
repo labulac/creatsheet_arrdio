@@ -2,7 +2,7 @@ import win.ui;
 import win.ui.menu;
 import com.excel;
 import fsys;
-import config;
+
 /*DSG{{*/
 mainForm = win.form(text="creatsheet";right=607;bottom=191;border="dialog frame";max=false;min=false;mode="popup";sysmenu=false;title=false;topmost=1)
 mainForm.add(
@@ -29,8 +29,8 @@ static6={cls="static";text="月";left=224;top=96;right=256;bottom=120;align="cen
 static7={cls="static";text="日--";left=312;top=96;right=344;bottom=120;align="center";center=1;dr=1;dt=1;font=LOGFONT(h=-14);transparent=1;z=14}
 )
 /*}}*/
-
-mainForm.static.text='新建账单小助手v'+config.__appVersion
+__version__='3.2'
+mainForm.static.text='新建账单小助手v'+__version__
 
 import fsys.update.simpleMain;
 if( fsys.update.simpleMain(
@@ -46,16 +46,16 @@ import win.ui.tooltip;
 var tooltipCtrl = win.ui.tooltip( mainForm );
 tooltipCtrl.addTool(mainForm.lnkVersion,"点击检测更新" );
 
-import fsys.update.simpleMain;
+
 fsys.update.simpleMain.onStatusChanged(function(version,description,status){
 	/*注意此回调可捕获到调用前或调用后的更新状态变更*/
 	if(status=="ready"){
 		mainForm.lnkVersion.disabledText = null;	
-		mainForm.lnkVersion.text = "点这里重新启动软件更新到新版本：" + version
+		mainForm.lnkVersion.text = "点这里重新启动软件更新到新版本"
 		tooltipCtrl.addTool(mainForm.lnkVersion,description);
 	}
 	elseif(status=="complete"){
-		mainForm.lnkVersion.text = "已更新到最新版本:" + version;
+		mainForm.lnkVersion.text = "已更新到最新版本" ;
 		tooltipCtrl.addTool(mainForm.lnkVersion,description);
 	} 
 	elseif(status=="latest"){

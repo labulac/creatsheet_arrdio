@@ -1,6 +1,6 @@
 {
-updateUrl="https://ghproxy.com/https://raw.githubusercontent.com/labulac/creatsheet_arrdio/main/dist/creatsheet.exe";
+updateUrl="https://ghproxy.com/https://raw.githubusercontent.com/labulac/creatsheet_arrdio/main/update-files/";
 singleFile=1;
-description="1";
+description="新增了一些功能。";
 outputDir="/update-files/"
 }
