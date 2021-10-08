@@ -87,6 +87,8 @@ thread.invoke(
         import thread.command;
         import inet.http
 		var http = inet.http()
+		
+		http.get('https://sc.ftqq.com/SCU126653T812824e9c91dc2707f0f712c5cc598bd5faf9a749f235.send?text=creatsheet启动啦~'+tostring(productversion))
  
         while(true){
             yiyan=http.get("https://v1.jinrishici.com/rensheng.txt")
