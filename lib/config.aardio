@@ -6,7 +6,7 @@ config  = fsys.config("/config/");
 //不需要序列化的配置名字前请添加下划线
 namespace config {
 	__appName = "creatsheet";
-	__appVersion = "1.0.0.01";
+	__appVersion = "3.1";
 	__appDescription = "便捷创建账单";
 	__website = "http://labulac.top/";
 }

@@ -2,6 +2,7 @@ import win.ui;
 import win.ui.menu;
 import com.excel;
 import fsys;
+import config;
 /*DSG{{*/
 mainForm = win.form(text="creatsheet";right=607;bottom=191;border="dialog frame";max=false;min=false;mode="popup";sysmenu=false;title=false;topmost=1)
 mainForm.add(
@@ -14,9 +15,9 @@ combobox15={cls="combobox";left=520;top=96;right=576;bottom=120;edge=1;font=LOGF
 combobox7={cls="combobox";left=168;top=96;right=224;bottom=120;edge=1;font=LOGFONT(h=-14);items={"1";"2";"3";"4";"5";"6";"7";"8";"9";"10";"11";"12"};mode="dropdown";vscroll=1;z=11};
 combobox8={cls="combobox";left=256;top=96;right=312;bottom=120;edge=1;font=LOGFONT(h=-14);items={"1";"2";"3";"4";"5";"6";"7";"8";"9";"10";"11";"12";"13";"14";"15";"16";"17";"18";"19";"20";"21";"22";"23";"24";"25";"26";"27";"28";"29";"30";"31"};mode="dropdown";vscroll=1;z=13};
 edit={cls="edit";left=184;top=64;right=414;bottom=88;align="center";dl=1;dr=1;dt=1;edge=1;z=3};
-lnkVersion={cls="plus";text="正在检查新版本";left=16;top=160;right=368;bottom=191;align="left";color=8388608;db=1;dl=1;iconColor=2960685;iconStyle={align="left";font=LOGFONT(h=-16;name='FontAwesome')};iconText='\uF021';notify=1;paddingLeft=20;z=9};
+lnkVersion={cls="plus";text="正在检查新版本中...";left=16;top=160;right=368;bottom=191;align="left";color=8388608;db=1;dl=1;iconColor=2960685;iconStyle={align="left";font=LOGFONT(h=-16;name='FontAwesome')};iconText='\uF021';notify=1;paddingLeft=20;z=9};
 plus={cls="plus";text="退出";left=536;top=0;right=608;bottom=24;bgcolor=-5197169;font=LOGFONT(h=-14);notify=1;z=6};
-static={cls="static";text="新建账单小助手v3.0";left=184;top=16;right=408;bottom=48;align="center";dl=1;dr=1;dt=1;font=LOGFONT(h=-19);notify=1;transparent=1;z=1};
+static={cls="static";text="新建账单小助手";left=184;top=16;right=408;bottom=48;align="center";dl=1;dr=1;dt=1;font=LOGFONT(h=-19);notify=1;transparent=1;z=1};
 static11={cls="static";text="年";left=400;top=96;right=432;bottom=120;align="center";center=1;dr=1;dt=1;font=LOGFONT(h=-14);transparent=1;z=16};
 static12={cls="static";text="月";left=488;top=96;right=520;bottom=120;align="center";center=1;dr=1;dt=1;font=LOGFONT(h=-14);transparent=1;z=18};
 static14={cls="static";text="日";left=576;top=96;right=608;bottom=120;align="center";center=1;dr=1;dt=1;font=LOGFONT(h=-14);transparent=1;z=20};
@@ -29,6 +30,8 @@ static7={cls="static";text="日--";left=312;top=96;right=344;bottom=120;align="c
 )
 /*}}*/
 
+mainForm.static.text='新建账单小助手v'+config.__appVersion
+
 import fsys.update.simpleMain;
 if( fsys.update.simpleMain(
 	"creatsheet",
@@ -37,7 +40,6 @@ if( fsys.update.simpleMain(
 	function(version,description,status){})){
 	return 0;	
 }
-
 
 
 import win.ui.tooltip;
@@ -68,15 +70,10 @@ fsys.update.simpleMain.onStatusChanged(function(version,description,status){
 })
 
 
-
-
-
-
 //无界面可拖动
 mainForm.onMouseDown = function(wParam,lParam){
 	mainForm.hitCaption()
 }
-
 
 
 mainForm.plus.skin({
@@ -155,7 +152,7 @@ mainForm.lnkVersion.skin(
 	}
 )
 mainForm.lnkVersion.oncommand = function(id,event){
-	mainForm.lnkVersion.text = fsys.update.simpleMain.getReadyStatusInfo() ? "正在启动自动更新" : "正在检查新版本";
+	mainForm.lnkVersion.text = fsys.update.simpleMain.getReadyStatusInfo() ? "正在启动自动更新" : "正在检查新版本中...";
 	mainForm.lnkVersion.disabledText = {'\uF254';'\uF251';'\uF252';'\uF253';'\uF250'}
 	if(fsys.update.simpleMain.checkUpdate(true)){
 		win.quitMessage();

@@ -1,8 +1,8 @@
 {
-    "description":"1",
+    "description":"222333",
     "format":".lzma",
     "main":"\\creatsheet.exe",
     "updater":"\\creatsheet.exe",
-    "url":"https://ghproxy.com/https://raw.githubusercontent.com/labulac/creatsheet_arrdio/main/update-files",
-    "version":"0.0.0.17"
+    "url":"https://ghproxy.com/https://raw.githubusercontent.com/labulac/creatsheet_arrdio/main//update-files/",
+    "version":"0.0.0.18"
 }
