@@ -1,24 +1,23 @@
 import win.ui;
 import com.excel;
 import fsys;
-
 /*DSG{{*/
 mainForm = win.form(text="creatsheet";right=607;bottom=191;border="dialog frame";max=false;min=false;mode="popup";sysmenu=false;title=false;topmost=1)
 mainForm.add(
 button={cls="button";text="生成账单";left=472;top=64;right=536;bottom=88;dr=1;dt=1;font=LOGFONT(h=-14);z=5};
-button2={cls="button";text="写入工期";left=40;top=128;right=104;bottom=152;disabled=1;dr=1;dt=1;font=LOGFONT(h=-14);z=10};
-datetimepick={cls="datetimepick";left=160;top=96;right=272;bottom=120;edge=1;z=13};
-datetimepick2={cls="datetimepick";left=368;top=96;right=480;bottom=120;edge=1;z=14};
+button2={cls="button";text="写入工期";left=472;top=96;right=536;bottom=120;disabled=1;dr=1;dt=1;font=LOGFONT(h=-14);z=10};
+datetimepick={cls="datetimepick";left=162;top=96;right=274;bottom=120;edge=1;z=13};
+datetimepick2={cls="datetimepick";left=342;top=96;right=454;bottom=120;edge=1;z=14};
 edit={cls="edit";left=184;top=64;right=414;bottom=88;align="center";dl=1;dr=1;dt=1;edge=1;z=3};
 lnkVersion={cls="plus";text="正在检查新版本中...";left=16;top=160;right=368;bottom=191;align="left";color=8388608;db=1;dl=1;iconColor=2960685;iconStyle={align="left";font=LOGFONT(h=-16;name='FontAwesome')};iconText='\uF021';notify=1;paddingLeft=20;z=8};
 picturebox={cls="picturebox";left=0;top=0;right=48;bottom=48;autosize=1;image=$"C:\Users\D0raemon\Desktop\exinputBundle.picfaceCom.ico";notify=1;z=11};
 plus={cls="plus";text="退出";left=536;top=0;right=608;bottom=24;bgcolor=-5197169;font=LOGFONT(h=-14);notify=1;z=6};
-static={cls="static";text="新建账单小助手";left=184;top=16;right=408;bottom=48;align="center";dl=1;dr=1;dt=1;font=LOGFONT(h=-19);notify=1;transparent=1;z=1};
-static2={cls="static";text="工期段：";left=64;top=96;right=128;bottom=120;align="center";center=1;dr=1;dt=1;font=LOGFONT(h=-14);transparent=1;z=7};
+static={cls="static";text="新建账单小助手";left=8;top=16;right=608;bottom=48;align="center";dl=1;dr=1;dt=1;font=LOGFONT(h=-19);notify=1;transparent=1;z=1};
+static2={cls="static";text="工期段：";left=80;top=96;right=144;bottom=120;align="center";center=1;dr=1;dt=1;font=LOGFONT(h=-14);transparent=1;z=7};
 static3={cls="static";text="新的账单名：";left=72;top=64;right=176;bottom=88;align="center";center=1;dl=1;dt=1;font=LOGFONT(h=-14);transparent=1;z=2};
 static4={cls="static";text=".xlsx";left=424;top=64;right=467;bottom=88;align="center";center=1;dr=1;dt=1;font=LOGFONT(h=-14);notify=1;transparent=1;z=4};
-static7={cls="static";text="--";left=304;top=96;right=336;bottom=120;align="center";center=1;dr=1;dt=1;font=LOGFONT(h=-14);transparent=1;z=9};
-static8={cls="static";text="开心每一天！";left=96;top=128;right=608;bottom=160;align="center";center=1;font=LOGFONT(h=-16;weight=700);transparent=1;z=12}
+static7={cls="static";text="--";left=292;top=96;right=324;bottom=120;align="center";center=1;dr=1;dt=1;font=LOGFONT(h=-14);transparent=1;z=9};
+static8={cls="static";text="开心每一天！";left=0;top=128;right=608;bottom=160;align="center";center=1;font=LOGFONT(h=-16;weight=700);transparent=1;z=12}
 )
 /*}}*/
 

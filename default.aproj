@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<project ver="10" name="creatsheet" libEmbed="true" icon="C:\Users\D0raemon\Desktop\exinputBundle.picfaceCom.ico" ui="win" output="creatsheet.exe" CompanyName="labulac" FileDescription="creatsheet" LegalCopyright="Copyright (C) labulac 2021" ProductName="creatsheet" InternalName="creatsheet" FileVersion="0.0.0.40" ProductVersion="0.0.0.40" publishDir="/dist/" dstrip="false" local="false" ignored="false">
+<project ver="10" name="creatsheet" libEmbed="true" icon="C:\Users\D0raemon\Desktop\exinputBundle.picfaceCom.ico" ui="win" output="creatsheet.exe" CompanyName="labulac" FileDescription="creatsheet" LegalCopyright="Copyright (C) labulac 2021" ProductName="creatsheet" InternalName="creatsheet" FileVersion="0.0.0.41" ProductVersion="0.0.0.41" publishDir="/dist/" dstrip="false" local="false" ignored="false">
 	<file name="main.aardio" path="main.aardio" comment="main.aardio"/>
 	<folder name="资源文件" path="res" embed="true" local="false" ignored="false">
 		<file name="ico.ico" path="res\ico.ico" comment="res\ico.ico"/>
