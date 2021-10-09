@@ -150,6 +150,8 @@ mainForm.plus.oncommand = function(id,event){
 }
 
 mainForm.button2.oncommand = function(id,event){
+	mainForm.button2.disabled=true
+	mainForm.button2.text='写入中...'
 	var qsrq=mainForm.combobox.text+"年"+mainForm.combobox7.text+"月"+mainForm.combobox8.text+"日"
 	var jzrq=mainForm.combobox12.text+"年"+mainForm.combobox13.text+"月"+mainForm.combobox15.text+"日"
 	
@@ -174,7 +176,7 @@ mainForm.button2.oncommand = function(id,event){
 	excel.workbooks.close(); //关闭工作簿
 	excel.Quit(); //退出
 	
-	mainForm.button2.disabled=true
+	
 	mainForm.button2.text='已写入'
 }
 
