@@ -1,7 +1,7 @@
 import win.ui;
 import com.excel;
 import fsys;
-import fsys.update.simpleMain;
+
 /*DSG{{*/
 mainForm = win.form(text="creatsheet";right=607;bottom=191;border="dialog frame";max=false;min=false;mode="popup";sysmenu=false;title=false;topmost=1)
 mainForm.add(
@@ -38,6 +38,7 @@ import win.ui.tooltip;
 var tooltipCtrl = win.ui.tooltip( mainForm );
 tooltipCtrl.addTool(mainForm.lnkVersion,"点击检测更新" );
 
+import fsys.update.simpleMain;
 fsys.update.simpleMain.onStatusChanged(function(version,description,status){
 	/*注意此回调可捕获到调用前或调用后的更新状态变更*/
 	if(status=="ready"){
